@@ -1,19 +1,20 @@
-﻿<Window x:Class="Lab3.MainWindow"
+﻿<Window x:Class="BirdsApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1000">
-    <Grid>
-        <TextBox x:Name="sparrowLTextBox" HorizontalAlignment="Left" Margin="150,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="crowLTextBox" HorizontalAlignment="Left" Margin="150,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Лелека" HorizontalAlignment="Left" Margin="54,68,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
-        <Label Content="Ворона" HorizontalAlignment="Left" Margin="54,117,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
-        <Button Content="Обрахувати" HorizontalAlignment="Left" Margin="54,173,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click"/>
-        <TextBox x:Name="sparrowResultLabel" HorizontalAlignment="Left" Margin="316,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Height="22" Text="Result.."/>
-        <TextBox x:Name="crowResultLabel" HorizontalAlignment="Left" Margin="316,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Height="22" Text="Result.."/>
+        Title="Birds Application" Height="450" Width="650">
+    <Grid Background="#FF00C6CA">
+        <TextBox x:Name="StorkWingSpanInput" HorizontalAlignment="Left" Margin="185,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="CrowHeightInput" HorizontalAlignment="Left" Margin="185,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Лелека(розмах крил):" HorizontalAlignment="Left" Margin="54,68,0,0" VerticalAlignment="Top" Height="26" Width="131"/>
+        <Label Content="Ворона(висота):" HorizontalAlignment="Left" Margin="54,117,0,0" VerticalAlignment="Top" Height="26" Width="121"/>
+        <Button Content="Обрахувати" HorizontalAlignment="Left" Margin="54,217,0,0" VerticalAlignment="Top" Width="84" Click="GenerateTests_Click"/>
+        <ListBox x:Name="BirdsListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="310,30,22,47" DisplayMemberPath="DisplayInfo"/>
+        <Label Content="К-сть тестів:" HorizontalAlignment="Left" Margin="54,163,0,0" VerticalAlignment="Top" Height="26" Width="121"/>
+        <TextBox x:Name="NumberOfTestsInput" HorizontalAlignment="Left" Margin="185,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
 
     </Grid>
 </Window>

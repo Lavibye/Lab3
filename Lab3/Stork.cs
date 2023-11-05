@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace BirdsApp
 {
-    public class Crow : Bird
+    public class Stork : Bird
     {
-        public double Height { get; set; }
+        public double WingSpan { get; set; }
 
-        public Crow(string name, double height) : base(name)
+        public Stork(string name, double wingSpan) : base(name)
         {
-            Height = height;
+            WingSpan = wingSpan;
         }
 
         public override double CalculateFoodRequirement()
         {
-            return 0.8 * Height;
+            return WingSpan * 1 / 2000;
         }
     }
 }

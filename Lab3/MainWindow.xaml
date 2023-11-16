@@ -15,6 +15,8 @@
         <ListBox x:Name="BirdsListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="310,30,22,47" DisplayMemberPath="DisplayInfo"/>
         <Label Content="К-сть тестів:" HorizontalAlignment="Left" Margin="54,163,0,0" VerticalAlignment="Top" Height="26" Width="121"/>
         <TextBox x:Name="NumberOfTestsInput" HorizontalAlignment="Left" Margin="185,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="totalStorkFoodRequirementLabel" Content="" HorizontalAlignment="Left" Margin="54,283,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="totalCrowFoodRequirementLabel" Content="" HorizontalAlignment="Left" Margin="54,324,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

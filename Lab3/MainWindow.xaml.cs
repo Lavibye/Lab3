@@ -32,6 +32,9 @@ namespace BirdsApp
         {
             Birds.Clear();
 
+            double totalStorkFoodRequirement = 0.0;
+            double totalCrowFoodRequirement = 0.0;
+
             if (double.TryParse(StorkWingSpanInput.Text, out double baseStorkWingSpan) &&
                 double.TryParse(CrowHeightInput.Text, out double baseCrowHeight) &&
                 int.TryParse(NumberOfTestsInput.Text, out int numberOfTests))
@@ -41,9 +44,17 @@ namespace BirdsApp
                     double storkWingSpan = baseStorkWingSpan + (i * 0.1); // Припустимо, що кожен наступний лелека має на 0.1 більше розмаху крил
                     double crowHeight = baseCrowHeight + (i * 0.05); // І кожна наступна ворона на 0.05 вища
 
-                    Birds.Add(new Stork($"Stork {i + 1}", storkWingSpan));
-                    Birds.Add(new Crow($"Crow {i + 1}", crowHeight));
+                    Stork newStork = new Stork($"Stork {i + 1}", storkWingSpan);
+                    Crow newCrow = new Crow($"Crow {i + 1}", crowHeight);
+
+                    Birds.Add(newStork);
+                    Birds.Add(newCrow);
+
+                    totalStorkFoodRequirement += newStork.CalculateFoodRequirement();
+                    totalCrowFoodRequirement += newCrow.CalculateFoodRequirement();
                 }
+                totalStorkFoodRequirementLabel.Content = $"Total Stork Food: {totalStorkFoodRequirement}";
+                totalCrowFoodRequirementLabel.Content = $"Total Crow Food: {totalCrowFoodRequirement}";
             }
             else
             {
